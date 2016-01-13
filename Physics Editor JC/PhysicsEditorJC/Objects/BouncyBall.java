@@ -29,12 +29,11 @@ public class BouncyBall extends Environment.Object
 			angleIncidence=Math.PI+angleIncidence;
 		double angleNormal = Math.atan(dydx);
 		double angleReflection = 2*angleNormal - angleIncidence;
-		setVx(v*0.5*Math.cos(angleReflection));
-		setVy(v*0.5*Math.sin(angleReflection));
-		if(Math.abs(v) < 1)
-		{
+		setVx(v*0.55*Math.cos(angleReflection));
+		setVy(v*0.55*Math.sin(angleReflection));
+		if(Math.abs(getVy())<1)
 			setVy(0.0);
+		if(Math.abs(getVx())<1)
 			setVx(0.0);
-		}
 	}
 }
