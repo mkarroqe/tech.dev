@@ -19,7 +19,7 @@
 			<applet_ref/>
 			<debugger_ref/>
 			<param/>
-			<run/>
+			<run>Environment.TheWorld</run>
 			<verify>true</verify>
 		</runtime>
 	</runtimes>
@@ -38,6 +38,10 @@
 			<folderitem>
 				<path>Sprites</path>
 			</folderitem>
+			<fileitem>
+				<path>Environment\Controls.java</path>
+				<folder>Environment</folder>
+			</fileitem>
 			<fileitem>
 				<path>Environment\Landscape.java</path>
 				<folder>Environment</folder>
