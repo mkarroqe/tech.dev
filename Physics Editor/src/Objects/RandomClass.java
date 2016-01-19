@@ -29,6 +29,7 @@ public class RandomClass extends Environment.Object
 		setY(400);
 		setVx(0.0);
 		setVy(0.0);
+		bounceConstant = 0.3;
 		
 		appearance=new BufferedImage(getWidth(),getHeight(), BufferedImage.TYPE_INT_ARGB);
 		Graphics2D g2=appearance.createGraphics();  
@@ -76,8 +77,8 @@ public class RandomClass extends Environment.Object
 			angleIncidence=Math.PI+angleIncidence;
 		double angleNormal = Math.atan(dydx);
 		double angleReflection = 2*angleNormal-angleIncidence;
-		setVx(v*0.3*Math.cos(angleReflection));
-		setVy(v*0.3*Math.sin(angleReflection));
+		setVx(v*bounceConstant*Math.cos(angleReflection));
+		setVy(v*bounceConstant*Math.sin(angleReflection));
 		if(Math.abs(getVy())<1)
 			setVy(0.0);
 		if(Math.abs(getVx())<1)

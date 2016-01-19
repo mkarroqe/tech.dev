@@ -14,6 +14,7 @@ public class BouncyBall extends Environment.Object
 		setY(400);
 		//setVx(1.0);
 		//setVy(-1.0);
+		bounceConstant = 0.55;
 		
 		appearance = new BufferedImage(getWidth(),getHeight(), BufferedImage.TYPE_INT_ARGB);
 		Graphics2D g = appearance.createGraphics();
@@ -29,12 +30,11 @@ public class BouncyBall extends Environment.Object
 			angleIncidence=Math.PI+angleIncidence;
 		double angleNormal = Math.atan(dydx);
 		double angleReflection = 2*angleNormal - angleIncidence;
-		setVx(v*0.5*Math.cos(angleReflection));
-		setVy(v*0.5*Math.sin(angleReflection));
-		if(Math.abs(v) < 1)
-		{
+		setVx(v*bounceConstant*Math.cos(angleReflection));
+		setVy(v*bounceConstant*Math.sin(angleReflection));
+		if(Math.abs(getVy())<1)
 			setVy(0.0);
+		if(Math.abs(getVx())<1)
 			setVx(0.0);
-		}
 	}
 }
