@@ -35,6 +35,8 @@ public class Controls extends JPanel implements KeyListener
     		public synchronized void actionPerformed(ActionEvent e)
     		{
     			world.requestFocusInWindow();
+    			world.gravity *= -1;
+    			world.accelerationVertical *= -1;
     		}
     	});
     }

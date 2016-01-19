@@ -64,4 +64,31 @@
 			<active>true</active>
 		</docitem>
 	</open_files>
+	<symboltables>
+		<symboltable>
+			<path>PhysicsEditorJC\Environment\TheWorld.java.sdk</path>
+			<symbols>
+				<symbol>BouncyBall</symbol>
+				<symbol>Controls</symbol>
+				<symbol>Field</symbol>
+				<symbol>Landscape</symbol>
+				<symbol>RandomClass</symbol>
+				<symbol>TheWorld</symbol>
+			</symbols>
+		</symboltable>
+		<symboltable>
+			<path>PhysicsEditorJC\Objects\BouncyBall.java.sdk</path>
+			<symbols>
+				<symbol>BouncyBall</symbol>
+				<symbol>Object</symbol>
+			</symbols>
+		</symboltable>
+		<symboltable>
+			<path>PhysicsEditorJC\Environment\Controls.java.sdk</path>
+			<symbols>
+				<symbol>Controls</symbol>
+				<symbol>TheWorld</symbol>
+			</symbols>
+		</symboltable>
+	</symboltables>
 </workspace_user>

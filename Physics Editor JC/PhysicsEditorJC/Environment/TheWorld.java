@@ -156,12 +156,23 @@ private void applyPhysics()
 		thing.updatePosition(landscape.getLandscapeHeightAt(thing.getX()+((thing.getWidth()-1)/2), thing.getElevation()));
 		thing.setVy(thing.getVy()-gravity);
 		int groundUnderObject=landscape.getLandscapeHeightAt(thing.getX()+((thing.getWidth()-1)/2),thing.getElevation());//gets where the land is
+		
+		//BOUNDARIES
+		//if(thing.getY() + thing.getVy() > SCREEN_HEIGHT) thing.setVy(-thing.bounceConstant*thing.getVy());//keeps "ball" from moving BELOW the screen
+		if(thing.getY() + thing.getVy() < 20) 
+			thing.setVy(-thing.bounceConstant*thing.getVy());//keeps "ball" from moving ABOVE the screen
+		if(thing.getX() + thing.getVx() > 1000) 
+			thing.setVx(-thing.bounceConstant*1.5*thing.getVx());
+		if(thing.getX() + 0.5*thing.getVx() < 0) //offsetting it to match the leftmost border of the screen
+			thing.setVx(-thing.bounceConstant*1.5*thing.getVx());
+		
+		//BOUNCING ON GROUND
 		double dydx=landscape.getDyDxAt(thing.getX(), thing.getY());//gets the slope of the land
 		//if(thing.getY()>=groundUnderObject)//figures out if the ground has been hit
 		if(thing.getY() + thing.getVy() >= groundUnderObject)
 		{
 			thing.setY(groundUnderObject);
-			thing.hitGround(groundUnderObject, dydx);//tells the object to react to having hit ground
+			thing.hitGround(groundUnderObject, dydx);
 		}
 	}
  }
