@@ -23,6 +23,7 @@ public class Object
  protected double angle;
  protected BufferedImage appearance;
  
+ protected double bounceConstant;
  
  public int getWidth() 
  {
