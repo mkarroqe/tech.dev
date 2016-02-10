@@ -39,6 +39,7 @@ public class TheWorld
  public static double accelerationVertical = 1.5;
  public static double accelerationHorizontal = 0.4;
  public static int seaLevel = SCREEN_HEIGHT - 150;//50 pixels above the bottom of the window
+ public static int frameSpeed = 17;
  
  /**
   * The following fields are all the objects that are visible in the environment
@@ -132,7 +133,7 @@ public class TheWorld
 		 applyPhysics();
 		 update(getGraphics());//paint all of the objects
 		 long timeTaken = System.currentTimeMillis() - currentTime;//figure out how long it took to paint everything
-		 int pauseThisLength = (int)(33-timeTaken);//determine how long the animation should pause before the next frame is shown
+		 int pauseThisLength = (int)(frameSpeed-timeTaken);//determine how long the animation should pause before the next frame is shown
 		 if(pauseThisLength < 0) 
 			 pauseThisLength = 1;//never have a negative pause
 		 pause(pauseThisLength);//pause
@@ -159,11 +160,11 @@ private void applyPhysics()
 		
 		//BOUNDARIES
 		//if(thing.getY() + thing.getVy() > SCREEN_HEIGHT) thing.setVy(-thing.bounceConstant*thing.getVy());//keeps "ball" from moving BELOW the screen
-		if(thing.getY() + thing.getVy() < 20) 
+		if(thing.getY() + thing.getVy() <= 20) 
 			thing.setVy(-thing.bounceConstant*thing.getVy());//keeps "ball" from moving ABOVE the screen
-		if(thing.getX() + thing.getVx() > 1000) 
+		if(thing.getX() + thing.getVx() >= 1000) 
 			thing.setVx(-thing.bounceConstant*1.5*thing.getVx());
-		if(thing.getX() + 0.5*thing.getVx() < 0) //offsetting it to match the leftmost border of the screen
+		if(thing.getX() + 0.5*thing.getVx() <= 0) //offsetting it to match the leftmost border of the screen
 			thing.setVx(-thing.bounceConstant*1.5*thing.getVx());
 		
 		//BOUNCING ON GROUND

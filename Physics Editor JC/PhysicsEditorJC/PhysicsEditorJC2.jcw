@@ -3,17 +3,15 @@
 <workspace>
 	<settings>
 		<label>PhysicsEditorJC</label>
-		<id>52</id>
-		<version>0</version>
 	</settings>
 	<users>
 		<user>
-			<path>PhysicsEditorJC.jcu</path>
+			<path>PhysicsEditorJC2.jcu</path>
 		</user>
 	</users>
 	<projects>
 		<project>
-			<path>PhysicsEditorJC\PhysicsEditorJC.jcp</path>
+			<path>PhysicsEditorJC.jcp</path>
 		</project>
 	</projects>
 </workspace>
