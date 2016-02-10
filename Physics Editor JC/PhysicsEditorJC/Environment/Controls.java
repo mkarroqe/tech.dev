@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 import Landscapes.Field;
 import Objects.BouncyBall;
@@ -22,21 +23,66 @@ import java.awt.image.BufferedImage;
 
 public class Controls extends JPanel implements KeyListener
 {
-	JButton gravity;
 	TheWorld world;
 	
     public Controls(TheWorld world) 
     {
     	this.world = world;
-    	gravity = new JButton("Gravity Up");
-    	gravity.setSize(300,300);
+    	
+    	JLabel title = new JLabel("PHYSICS EDITOR BY ADVANCED GROUP", JLabel.CENTER);
+   		add(title);
+    	
+    	//SHOW GRAVITY
+    	JLabel gravity = new JLabel(printG(world.gravity), JLabel.CENTER);
     	add(gravity);
-    	gravity.addActionListener(new ActionListener(){
+    	
+    	//SWAP GRAVITY
+    	JButton gravityUp = new JButton("G-Up");
+    	add(gravityUp);
+    	gravityUp.addActionListener(new ActionListener()
+    	{
     		public synchronized void actionPerformed(ActionEvent e)
     		{
     			world.requestFocusInWindow();
     			world.gravity *= -1;
     			world.accelerationVertical *= -1;
+    			gravity.setText(printG(world.gravity));
+    		}
+    	});
+    	//INCREASE GRAVITY
+    	JButton gravityIn = new JButton("G+");
+    	add(gravityIn);
+    	gravityIn.addActionListener(new ActionListener()
+    	{
+    		public synchronized void actionPerformed(ActionEvent e)
+    		{
+    			world.requestFocusInWindow();
+    			world.gravity -= 0.1;
+    			gravity.setText(printG(world.gravity));
+    		}
+    	});
+    	//DECREASE GRAVITY
+    	JButton gravityDec = new JButton("G-");
+    	add(gravityDec);
+    	gravityDec.addActionListener(new ActionListener()
+    	{
+    		public synchronized void actionPerformed(ActionEvent e)
+    		{
+    			world.requestFocusInWindow();
+    			world.gravity += 0.1;
+    			gravity.setText(printG(world.gravity));
+    		}
+    	});
+    	//SET ZERO GRAVITY
+    	JButton gravityZero = new JButton("0-G");
+    	add(gravityZero);
+    	gravityZero.addActionListener(new ActionListener()
+    	{
+    		public synchronized void actionPerformed(ActionEvent e)
+    		{
+    			world.requestFocusInWindow();
+    			world.gravity = 0;
+    			gravity.setText(printG(world.gravity));
     		}
     	});
     }
@@ -70,5 +116,13 @@ public class Controls extends JPanel implements KeyListener
  {
 	 
  }
-    
+ 
+ public static String printG (double g)
+ {
+ 	if (g == 0 || g == -0)
+ 		return "" + 0;
+ 	if (g < 0)
+ 		return ("" + Math.abs(g)).substring(0,3);
+ 	return ("-" + g).substring(0,3);
+ }
 }

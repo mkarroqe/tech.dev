@@ -43,7 +43,7 @@
 			<path>PhysicsEditorJC\Environment\TheWorld.java</path>
 			<source>true</source>
 			<index>2</index>
-			<active>false</active>
+			<active>true</active>
 		</docitem>
 		<docitem>
 			<path>PhysicsEditorJC\Objects\BouncyBall.java</path>
@@ -61,19 +61,28 @@
 			<path>PhysicsEditorJC\Environment\Controls.java</path>
 			<source>true</source>
 			<index>5</index>
-			<active>true</active>
+			<active>false</active>
+		</docitem>
+		<docitem>
+			<path>PhysicsEditorJC\Landscapes\Field.java</path>
+			<source>true</source>
+			<index>6</index>
+			<active>false</active>
 		</docitem>
 	</open_files>
 	<symboltables>
 		<symboltable>
-			<path>PhysicsEditorJC\Environment\TheWorld.java.sdk</path>
+			<path>PhysicsEditorJC\Environment\Controls.java.sdk</path>
 			<symbols>
-				<symbol>BouncyBall</symbol>
 				<symbol>Controls</symbol>
-				<symbol>Field</symbol>
-				<symbol>Landscape</symbol>
-				<symbol>RandomClass</symbol>
 				<symbol>TheWorld</symbol>
+			</symbols>
+		</symboltable>
+		<symboltable>
+			<path>PhysicsEditorJC\Objects\RandomClass.java.sdk</path>
+			<symbols>
+				<symbol>Object</symbol>
+				<symbol>RandomClass</symbol>
 			</symbols>
 		</symboltable>
 		<symboltable>
@@ -84,9 +93,34 @@
 			</symbols>
 		</symboltable>
 		<symboltable>
-			<path>PhysicsEditorJC\Environment\Controls.java.sdk</path>
+			<path>PhysicsEditorJC\Environment\Object.java.sdk</path>
 			<symbols>
+				<symbol>Object</symbol>
+				<symbol>TheWorld</symbol>
+			</symbols>
+		</symboltable>
+		<symboltable>
+			<path>PhysicsEditorJC\Environment\Landscape.java.sdk</path>
+			<symbols>
+				<symbol>Landscape</symbol>
+			</symbols>
+		</symboltable>
+		<symboltable>
+			<path>PhysicsEditorJC\Landscapes\Field.java.sdk</path>
+			<symbols>
+				<symbol>Field</symbol>
+				<symbol>Landscape</symbol>
+				<symbol>TheWorld</symbol>
+			</symbols>
+		</symboltable>
+		<symboltable>
+			<path>PhysicsEditorJC\Environment\TheWorld.java.sdk</path>
+			<symbols>
+				<symbol>BouncyBall</symbol>
 				<symbol>Controls</symbol>
+				<symbol>Field</symbol>
+				<symbol>Landscape</symbol>
+				<symbol>RandomClass</symbol>
 				<symbol>TheWorld</symbol>
 			</symbols>
 		</symboltable>
